@@ -1,0 +1,1667 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>365 Books for Intellectual Awakening</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Cinzel:wght@400;500;600&family=IM+Fell+English:ital@0;1&family=Josefin+Sans:wght@200;300;400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #0e0c0a;
+    --parchment: #f5f0e8;
+    --gold: #b8860b;
+    --gold-light: #d4a017;
+    --gold-pale: #f0d080;
+    --red: #8b1a1a;
+    --cream: #faf7f0;
+    --mist: #e8e0d0;
+    --shadow: rgba(14,12,10,0.15);
+    --deep: #1a1510;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--ink);
+    color: var(--parchment);
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 4rem 2rem;
+    position: relative;
+    background:
+      radial-gradient(ellipse 80% 60% at 50% 20%, rgba(184,134,11,0.08) 0%, transparent 70%),
+      radial-gradient(ellipse 60% 40% at 80% 80%, rgba(139,26,26,0.06) 0%, transparent 60%),
+      var(--ink);
+    border-bottom: 1px solid rgba(184,134,11,0.3);
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+      repeating-linear-gradient(0deg, transparent, transparent 59px, rgba(184,134,11,0.04) 60px),
+      repeating-linear-gradient(90deg, transparent, transparent 59px, rgba(184,134,11,0.04) 60px);
+    pointer-events: none;
+  }
+
+  .roman-numeral {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(0.7rem, 1.5vw, 0.85rem);
+    letter-spacing: 0.5em;
+    color: var(--gold);
+    opacity: 0.7;
+    margin-bottom: 2rem;
+    animation: fadeUp 1s ease both;
+  }
+
+  .hero-title {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(2.4rem, 7vw, 5.5rem);
+    font-weight: 500;
+    line-height: 1.1;
+    letter-spacing: 0.05em;
+    color: var(--parchment);
+    animation: fadeUp 1s 0.2s ease both;
+  }
+
+  .hero-title span {
+    display: block;
+    color: var(--gold);
+    font-size: 0.55em;
+    letter-spacing: 0.25em;
+    font-weight: 400;
+    margin-top: 0.5rem;
+  }
+
+  .hero-sub {
+    font-family: 'IM Fell English', serif;
+    font-style: italic;
+    font-size: clamp(1rem, 2.2vw, 1.3rem);
+    color: var(--mist);
+    opacity: 0.75;
+    max-width: 560px;
+    margin: 2.5rem auto 3.5rem;
+    line-height: 1.7;
+    animation: fadeUp 1s 0.4s ease both;
+  }
+
+  .hero-stats {
+    display: flex;
+    gap: 3rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    animation: fadeUp 1s 0.6s ease both;
+  }
+
+  .stat {
+    text-align: center;
+  }
+
+  .stat-num {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    color: var(--gold);
+    display: block;
+    line-height: 1;
+  }
+
+  .stat-label {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.25em;
+    color: var(--mist);
+    opacity: 0.6;
+    text-transform: uppercase;
+    margin-top: 0.4rem;
+  }
+
+  .scroll-hint {
+    position: absolute;
+    bottom: 2.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    opacity: 0.4;
+    animation: fadeUp 1s 1s ease both;
+  }
+
+  .scroll-hint span {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 0.6rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+  }
+
+  .scroll-line {
+    width: 1px;
+    height: 40px;
+    background: linear-gradient(to bottom, var(--gold), transparent);
+    animation: scrollPulse 2s infinite;
+  }
+
+  @keyframes scrollPulse {
+    0%, 100% { opacity: 0.4; transform: scaleY(1); }
+    50% { opacity: 1; transform: scaleY(1.2); transform-origin: top; }
+  }
+
+  /* ── CONTROLS ── */
+  .controls {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(14,12,10,0.97);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(184,134,11,0.2);
+    padding: 1rem 2rem;
+  }
+
+  .controls-inner {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .search-wrap {
+    flex: 1;
+    min-width: 220px;
+    position: relative;
+  }
+
+  .search-wrap::before {
+    content: '⌕';
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--gold);
+    font-size: 1.1rem;
+    pointer-events: none;
+  }
+
+  input[type="search"] {
+    width: 100%;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(184,134,11,0.25);
+    border-radius: 2px;
+    color: var(--parchment);
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 0.8rem;
+    letter-spacing: 0.08em;
+    padding: 0.65rem 1rem 0.65rem 2.8rem;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+
+  input[type="search"]:focus { border-color: var(--gold); }
+  input[type="search"]::placeholder { color: rgba(245,240,232,0.3); }
+
+  .filters {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+  }
+
+  .filter-btn {
+    background: transparent;
+    border: 1px solid rgba(184,134,11,0.25);
+    color: var(--mist);
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    padding: 0.5rem 1rem;
+    border-radius: 1px;
+    cursor: pointer;
+    transition: all 0.2s;
+    white-space: nowrap;
+  }
+
+  .filter-btn:hover, .filter-btn.active {
+    background: var(--gold);
+    border-color: var(--gold);
+    color: var(--ink);
+  }
+
+  .count-display {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    color: var(--gold);
+    opacity: 0.7;
+    white-space: nowrap;
+    margin-left: auto;
+  }
+
+  /* ── CATEGORY SECTIONS ── */
+  .vault {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 4rem 2rem 6rem;
+  }
+
+  .category-section {
+    margin-bottom: 5rem;
+  }
+
+  .category-header {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 2.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid rgba(184,134,11,0.2);
+  }
+
+  .category-icon {
+    font-size: 1.5rem;
+    opacity: 0.8;
+  }
+
+  .category-title {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(0.9rem, 2vw, 1.1rem);
+    letter-spacing: 0.3em;
+    color: var(--gold);
+    font-weight: 400;
+    text-transform: uppercase;
+  }
+
+  .category-count {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    color: var(--mist);
+    opacity: 0.4;
+    margin-left: auto;
+  }
+
+  /* ── BOOK GRID ── */
+  .books-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5px;
+  }
+
+  /* ── BOOK CARD ── */
+  .book-card {
+    background: rgba(255,255,255,0.02);
+    border: 1px solid rgba(184,134,11,0.1);
+    padding: 1.8rem 1.6rem;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    position: relative;
+    overflow: hidden;
+    animation: fadeUp 0.5s ease both;
+  }
+
+  .book-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 3px;
+    height: 0;
+    background: var(--gold);
+    transition: height 0.3s ease;
+  }
+
+  .book-card:hover {
+    background: rgba(184,134,11,0.05);
+    border-color: rgba(184,134,11,0.3);
+    transform: translateY(-2px);
+  }
+
+  .book-card:hover::before { height: 100%; }
+
+  .book-card.hidden { display: none; }
+
+  .book-num {
+    font-family: 'Cinzel', serif;
+    font-size: 0.6rem;
+    letter-spacing: 0.25em;
+    color: var(--gold);
+    opacity: 0.5;
+    margin-bottom: 0.8rem;
+  }
+
+  .book-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1rem, 2vw, 1.15rem);
+    font-weight: 600;
+    color: var(--parchment);
+    line-height: 1.35;
+    margin-bottom: 0.5rem;
+  }
+
+  .book-author {
+    font-family: 'IM Fell English', serif;
+    font-style: italic;
+    font-size: 0.9rem;
+    color: var(--gold-light);
+    margin-bottom: 0.4rem;
+  }
+
+  .book-year {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    color: var(--mist);
+    opacity: 0.45;
+  }
+
+  /* ── MODAL ── */
+  .modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(10,8,6,0.92);
+    backdrop-filter: blur(8px);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s;
+  }
+
+  .modal-overlay.open {
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  .modal {
+    background: var(--deep);
+    border: 1px solid rgba(184,134,11,0.3);
+    max-width: 560px;
+    width: 100%;
+    max-height: 80vh;
+    overflow-y: auto;
+    padding: 2.5rem;
+    position: relative;
+    transform: translateY(20px);
+    transition: transform 0.3s;
+    scrollbar-width: thin;
+    scrollbar-color: var(--gold) transparent;
+  }
+
+  .modal-overlay.open .modal { transform: translateY(0); }
+
+  .modal-close {
+    position: absolute;
+    top: 1.2rem; right: 1.5rem;
+    background: none;
+    border: none;
+    color: var(--mist);
+    font-size: 1.4rem;
+    cursor: pointer;
+    opacity: 0.5;
+    transition: opacity 0.2s;
+    line-height: 1;
+  }
+
+  .modal-close:hover { opacity: 1; }
+
+  .modal-num {
+    font-family: 'Cinzel', serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.3em;
+    color: var(--gold);
+    opacity: 0.6;
+    margin-bottom: 1rem;
+  }
+
+  .modal-title {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(1.2rem, 3vw, 1.7rem);
+    font-weight: 500;
+    color: var(--parchment);
+    line-height: 1.25;
+    margin-bottom: 0.6rem;
+  }
+
+  .modal-author {
+    font-family: 'IM Fell English', serif;
+    font-style: italic;
+    font-size: 1.05rem;
+    color: var(--gold-light);
+    margin-bottom: 0.3rem;
+  }
+
+  .modal-year {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    color: var(--mist);
+    opacity: 0.45;
+    margin-bottom: 1.8rem;
+  }
+
+  .modal-divider {
+    height: 1px;
+    background: linear-gradient(to right, var(--gold), transparent);
+    margin-bottom: 1.5rem;
+    opacity: 0.3;
+  }
+
+  .modal-cat {
+    display: inline-block;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 0.6rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--ink);
+    background: var(--gold);
+    padding: 0.25rem 0.7rem;
+    margin-bottom: 1.5rem;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    text-align: center;
+    padding: 3rem 2rem;
+    border-top: 1px solid rgba(184,134,11,0.15);
+    font-family: 'IM Fell English', serif;
+    font-style: italic;
+    color: var(--mist);
+    opacity: 0.4;
+    font-size: 0.9rem;
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(16px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ── SCROLLBAR ── */
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { background: var(--ink); }
+  ::-webkit-scrollbar-thumb { background: var(--gold); opacity: 0.5; border-radius: 3px; }
+
+  /* ── BOOK OF THE DAY ── */
+  .botd-section {
+    background:
+      radial-gradient(ellipse 70% 80% at 10% 50%, rgba(184,134,11,0.07) 0%, transparent 60%),
+      radial-gradient(ellipse 50% 60% at 90% 30%, rgba(139,26,26,0.05) 0%, transparent 60%),
+      linear-gradient(180deg, rgba(184,134,11,0.04) 0%, transparent 100%);
+    border-top: 1px solid rgba(184,134,11,0.25);
+    border-bottom: 1px solid rgba(184,134,11,0.25);
+    padding: 5rem 2rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .botd-section::before {
+    content: 'I';
+    position: absolute;
+    right: -0.05em;
+    top: 50%;
+    transform: translateY(-50%);
+    font-family: 'Cinzel', serif;
+    font-size: clamp(10rem, 25vw, 22rem);
+    color: rgba(184,134,11,0.04);
+    line-height: 1;
+    pointer-events: none;
+    user-select: none;
+  }
+
+  .botd-inner {
+    max-width: 900px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+  }
+
+  .botd-label {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+  }
+
+  .botd-label::before {
+    content: '';
+    display: block;
+    width: 30px;
+    height: 1px;
+    background: var(--gold);
+    opacity: 0.6;
+  }
+
+  .botd-date {
+    font-family: 'Cinzel', serif;
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+    color: var(--mist);
+    opacity: 0.4;
+    margin-bottom: 2rem;
+  }
+
+  .botd-num {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(3.5rem, 8vw, 6rem);
+    color: var(--gold);
+    opacity: 0.15;
+    line-height: 1;
+    margin-bottom: -0.5rem;
+  }
+
+  .botd-title {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(1.4rem, 3.5vw, 2.2rem);
+    font-weight: 500;
+    color: var(--parchment);
+    line-height: 1.2;
+    margin-bottom: 0.8rem;
+  }
+
+  .botd-author {
+    font-family: 'IM Fell English', serif;
+    font-style: italic;
+    font-size: 1.15rem;
+    color: var(--gold-light);
+    margin-bottom: 0.4rem;
+  }
+
+  .botd-year {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    color: var(--mist);
+    opacity: 0.4;
+    margin-bottom: 1.5rem;
+  }
+
+  .botd-cat-tag {
+    display: inline-block;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 0.6rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--ink);
+    background: var(--gold);
+    padding: 0.3rem 0.9rem;
+  }
+
+  .botd-right {
+    border-left: 1px solid rgba(184,134,11,0.15);
+    padding-left: 4rem;
+  }
+
+  .botd-day-progress {
+    margin-top: 2rem;
+  }
+
+  .botd-progress-label {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 0.6rem;
+    letter-spacing: 0.2em;
+    color: var(--mist);
+    opacity: 0.4;
+    margin-bottom: 0.6rem;
+    text-transform: uppercase;
+  }
+
+  .botd-progress-bar {
+    width: 100%;
+    height: 2px;
+    background: rgba(184,134,11,0.15);
+    position: relative;
+    border-radius: 1px;
+  }
+
+  .botd-progress-fill {
+    height: 100%;
+    background: linear-gradient(to right, var(--gold), var(--gold-light));
+    border-radius: 1px;
+    transition: width 1s ease;
+  }
+
+  .botd-progress-pct {
+    font-family: 'Cinzel', serif;
+    font-size: 0.7rem;
+    color: var(--gold);
+    margin-top: 0.5rem;
+    opacity: 0.7;
+  }
+
+  .botd-nav {
+    display: flex;
+    gap: 0.8rem;
+    margin-top: 2rem;
+  }
+
+  .botd-nav-btn {
+    background: transparent;
+    border: 1px solid rgba(184,134,11,0.3);
+    color: var(--mist);
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 0.6rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    padding: 0.6rem 1.2rem;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  .botd-nav-btn:hover {
+    background: rgba(184,134,11,0.1);
+    border-color: var(--gold);
+    color: var(--gold);
+  }
+
+  /* ── RANDOM PICKER ── */
+  .picker-section {
+    padding: 5rem 2rem;
+    text-align: center;
+    position: relative;
+  }
+
+  .picker-eyebrow {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: var(--gold);
+    opacity: 0.7;
+    margin-bottom: 1rem;
+  }
+
+  .picker-heading {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    font-weight: 400;
+    color: var(--parchment);
+    margin-bottom: 0.8rem;
+    letter-spacing: 0.05em;
+  }
+
+  .picker-sub {
+    font-family: 'IM Fell English', serif;
+    font-style: italic;
+    color: var(--mist);
+    opacity: 0.5;
+    font-size: 1rem;
+    margin-bottom: 3rem;
+  }
+
+  .picker-card-wrap {
+    max-width: 480px;
+    margin: 0 auto 3rem;
+    min-height: 200px;
+    position: relative;
+  }
+
+  .picker-card {
+    background: rgba(255,255,255,0.02);
+    border: 1px solid rgba(184,134,11,0.2);
+    padding: 2.5rem 2rem;
+    position: relative;
+    opacity: 0;
+    transform: translateY(10px) scale(0.98);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+  }
+
+  .picker-card.visible {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+
+  .picker-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(to right, transparent, var(--gold), transparent);
+  }
+
+  .picker-card-num {
+    font-family: 'Cinzel', serif;
+    font-size: 0.6rem;
+    letter-spacing: 0.3em;
+    color: var(--gold);
+    opacity: 0.5;
+    margin-bottom: 1rem;
+  }
+
+  .picker-card-title {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(1.1rem, 3vw, 1.6rem);
+    font-weight: 500;
+    color: var(--parchment);
+    line-height: 1.25;
+    margin-bottom: 0.7rem;
+  }
+
+  .picker-card-author {
+    font-family: 'IM Fell English', serif;
+    font-style: italic;
+    font-size: 1rem;
+    color: var(--gold-light);
+    margin-bottom: 0.4rem;
+  }
+
+  .picker-card-year {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 0.6rem;
+    letter-spacing: 0.15em;
+    color: var(--mist);
+    opacity: 0.4;
+    margin-bottom: 1.2rem;
+  }
+
+  .picker-card-cat {
+    display: inline-block;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 0.55rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--ink);
+    background: rgba(184,134,11,0.8);
+    padding: 0.2rem 0.7rem;
+  }
+
+  .picker-spin-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.8rem;
+    background: transparent;
+    border: 1px solid var(--gold);
+    color: var(--gold);
+    font-family: 'Cinzel', serif;
+    font-size: 0.8rem;
+    letter-spacing: 0.25em;
+    padding: 1rem 2.5rem;
+    cursor: pointer;
+    transition: all 0.3s;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .picker-spin-btn::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--gold);
+    transform: translateX(-101%);
+    transition: transform 0.3s ease;
+    z-index: 0;
+  }
+
+  .picker-spin-btn:hover::before { transform: translateX(0); }
+  .picker-spin-btn:hover { color: var(--ink); }
+  .picker-spin-btn span { position: relative; z-index: 1; }
+
+  .picker-spin-btn .spin-icon {
+    font-size: 1rem;
+    position: relative;
+    z-index: 1;
+    display: inline-block;
+    transition: transform 0.4s;
+  }
+
+  .picker-spin-btn.spinning .spin-icon {
+    animation: spinOnce 0.5s ease;
+  }
+
+  @keyframes spinOnce {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+
+  .picker-history {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    max-width: 600px;
+    margin: 2.5rem auto 0;
+    min-height: 2rem;
+  }
+
+  .history-chip {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 0.55rem;
+    letter-spacing: 0.1em;
+    color: var(--mist);
+    opacity: 0.4;
+    border: 1px solid rgba(184,134,11,0.12);
+    padding: 0.25rem 0.6rem;
+    cursor: pointer;
+    transition: opacity 0.2s;
+    white-space: nowrap;
+  }
+
+  .history-chip:hover { opacity: 0.8; }
+
+  @media (max-width: 700px) {
+    .botd-inner { grid-template-columns: 1fr; gap: 2rem; }
+    .botd-right { border-left: none; padding-left: 0; border-top: 1px solid rgba(184,134,11,0.15); padding-top: 2rem; }
+    .botd-section::before { display: none; }
+  }
+
+  @media (max-width: 600px) {
+    .hero-stats { gap: 1.5rem; }
+    .controls-inner { flex-direction: column; align-items: stretch; }
+    .count-display { margin-left: 0; }
+    .modal { padding: 1.8rem 1.4rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <p class="roman-numeral">MCMXXIV — A LIFETIME CURRICULUM</p>
+  <h1 class="hero-title">
+    365 Books
+    <span>for Intellectual Awakening</span>
+  </h1>
+  <p class="hero-sub">A curated map of human understanding — spanning philosophy, science, psychology, history, and the deepest inquiries of civilisation.</p>
+  <div class="hero-stats">
+    <div class="stat"><span class="stat-num">365</span><span class="stat-label">Books</span></div>
+    <div class="stat"><span class="stat-num">14</span><span class="stat-label">Domains</span></div>
+    <div class="stat"><span class="stat-num">2500+</span><span class="stat-label">Years of Thought</span></div>
+  </div>
+  <div class="scroll-hint">
+    <span>Enter the Vault</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<!-- BOOK OF THE DAY -->
+<section class="botd-section" id="botdSection">
+  <div class="botd-inner">
+    <div class="botd-left">
+      <div class="botd-label">Book of the Day</div>
+      <div class="botd-date" id="botdDate"></div>
+      <div class="botd-num" id="botdNum"></div>
+      <h2 class="botd-title" id="botdTitle"></h2>
+      <div class="botd-author" id="botdAuthor"></div>
+      <div class="botd-year" id="botdYear"></div>
+      <div class="botd-cat-tag" id="botdCat"></div>
+    </div>
+    <div class="botd-right">
+      <div class="botd-progress-label">Year's Progress</div>
+      <div class="botd-day-progress">
+        <div class="botd-progress-label">Day <span id="botdDayNum"></span> of 365</div>
+        <div class="botd-progress-bar">
+          <div class="botd-progress-fill" id="botdFill"></div>
+        </div>
+        <div class="botd-progress-pct" id="botdPct"></div>
+      </div>
+      <div class="botd-nav">
+        <button class="botd-nav-btn" id="botdPrev">← Yesterday</button>
+        <button class="botd-nav-btn" id="botdToday">Today</button>
+        <button class="botd-nav-btn" id="botdNext">Tomorrow →</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RANDOM PICKER -->
+<section class="picker-section">
+  <div class="picker-eyebrow">Oracle of the Vault</div>
+  <h2 class="picker-heading">Random Book Discovery</h2>
+  <p class="picker-sub">Let the vault choose your next read</p>
+  <div class="picker-card-wrap">
+    <div class="picker-card" id="pickerCard">
+      <div class="picker-card-num" id="pcNum"></div>
+      <div class="picker-card-title" id="pcTitle">Press the button to discover a book</div>
+      <div class="picker-card-author" id="pcAuthor"></div>
+      <div class="picker-card-year" id="pcYear"></div>
+      <div class="picker-card-cat" id="pcCat"></div>
+    </div>
+  </div>
+  <button class="picker-spin-btn" id="spinBtn">
+    <span class="spin-icon">✦</span>
+    <span>Draw from the Vault</span>
+  </button>
+  <div class="picker-history" id="pickerHistory"></div>
+</section>
+
+<!-- CONTROLS -->
+<div class="controls">
+  <div class="controls-inner">
+    <div class="search-wrap">
+      <input type="search" id="searchInput" placeholder="Search titles, authors…" autocomplete="off">
+    </div>
+    <div class="filters" id="filterBtns"></div>
+    <span class="count-display" id="countDisplay">365 books</span>
+  </div>
+</div>
+
+<!-- VAULT -->
+<main class="vault" id="vault"></main>
+
+<!-- MODAL -->
+<div class="modal-overlay" id="modalOverlay">
+  <div class="modal" id="modal">
+    <button class="modal-close" id="modalClose">✕</button>
+    <div class="modal-num" id="mNum"></div>
+    <h2 class="modal-title" id="mTitle"></h2>
+    <div class="modal-author" id="mAuthor"></div>
+    <div class="modal-year" id="mYear"></div>
+    <div class="modal-divider"></div>
+    <div class="modal-cat" id="mCat"></div>
+  </div>
+</div>
+
+<footer>
+  "The reading of all good books is like conversation with the finest men of past centuries." — Descartes
+</footer>
+
+<script>
+const BOOKS = [
+  // ── PHILOSOPHY: WESTERN ──
+  { n:1,  title:"Meditations", author:"Marcus Aurelius", year:180, cat:"Western Philosophy" },
+  { n:2,  title:"The Republic", author:"Plato", year:-380, cat:"Western Philosophy" },
+  { n:3,  title:"Nicomachean Ethics", author:"Aristotle", year:-350, cat:"Western Philosophy" },
+  { n:4,  title:"Beyond Good and Evil", author:"Friedrich Nietzsche", year:1886, cat:"Western Philosophy" },
+  { n:5,  title:"Thus Spoke Zarathustra", author:"Friedrich Nietzsche", year:1883, cat:"Western Philosophy" },
+  { n:6,  title:"Critique of Pure Reason", author:"Immanuel Kant", year:1781, cat:"Western Philosophy" },
+  { n:7,  title:"Being and Time", author:"Martin Heidegger", year:1927, cat:"Western Philosophy" },
+  { n:8,  title:"The Phenomenology of Spirit", author:"G.W.F. Hegel", year:1807, cat:"Western Philosophy" },
+  { n:9,  title:"Discourse on Method", author:"René Descartes", year:1637, cat:"Western Philosophy" },
+  { n:10, title:"Leviathan", author:"Thomas Hobbes", year:1651, cat:"Western Philosophy" },
+  { n:11, title:"An Enquiry Concerning Human Understanding", author:"David Hume", year:1748, cat:"Western Philosophy" },
+  { n:12, title:"The Social Contract", author:"Jean-Jacques Rousseau", year:1762, cat:"Western Philosophy" },
+  { n:13, title:"Ethics", author:"Baruch Spinoza", year:1677, cat:"Western Philosophy" },
+  { n:14, title:"Tractatus Logico-Philosophicus", author:"Ludwig Wittgenstein", year:1921, cat:"Western Philosophy" },
+  { n:15, title:"The Birth of Tragedy", author:"Friedrich Nietzsche", year:1872, cat:"Western Philosophy" },
+  { n:16, title:"Confessions", author:"Augustine of Hippo", year:400, cat:"Western Philosophy" },
+  { n:17, title:"The Prince", author:"Niccolò Machiavelli", year:1532, cat:"Western Philosophy" },
+  { n:18, title:"Apology", author:"Plato", year:-399, cat:"Western Philosophy" },
+  { n:19, title:"On Liberty", author:"John Stuart Mill", year:1859, cat:"Western Philosophy" },
+  { n:20, title:"The Will to Power", author:"Friedrich Nietzsche", year:1901, cat:"Western Philosophy" },
+
+  // ── PHILOSOPHY: EASTERN ──
+  { n:21, title:"Tao Te Ching", author:"Laozi", year:-600, cat:"Eastern Philosophy" },
+  { n:22, title:"The Analects", author:"Confucius", year:-479, cat:"Eastern Philosophy" },
+  { n:23, title:"Zhuangzi", author:"Zhuangzi", year:-300, cat:"Eastern Philosophy" },
+  { n:24, title:"Bhagavad Gita", author:"Anonymous", year:-200, cat:"Eastern Philosophy" },
+  { n:25, title:"The Dhammapada", author:"Anonymous", year:-300, cat:"Eastern Philosophy" },
+  { n:26, title:"Upanishads", author:"Various Sages", year:-800, cat:"Eastern Philosophy" },
+  { n:27, title:"The Book of Five Rings", author:"Miyamoto Musashi", year:1645, cat:"Eastern Philosophy" },
+  { n:28, title:"I Ching", author:"Anonymous", year:-1000, cat:"Eastern Philosophy" },
+  { n:29, title:"The Yoga Sutras of Patanjali", author:"Patanjali", year:400, cat:"Eastern Philosophy" },
+  { n:30, title:"Zen Mind, Beginner's Mind", author:"Shunryu Suzuki", year:1970, cat:"Eastern Philosophy" },
+  { n:31, title:"The Art of War", author:"Sun Tzu", year:-500, cat:"Eastern Philosophy" },
+  { n:32, title:"Siddhartha", author:"Hermann Hesse", year:1922, cat:"Eastern Philosophy" },
+  { n:33, title:"In the Buddha's Words", author:"Bhikkhu Bodhi", year:2005, cat:"Eastern Philosophy" },
+  { n:34, title:"The Teachings of Don Juan", author:"Carlos Castaneda", year:1968, cat:"Eastern Philosophy" },
+  { n:35, title:"The Kyoto School: An Introduction", author:"Robert E. Carter", year:2013, cat:"Eastern Philosophy" },
+
+  // ── PHILOSOPHY: EXISTENTIALISM & MEANING ──
+  { n:36, title:"Being and Nothingness", author:"Jean-Paul Sartre", year:1943, cat:"Existentialism & Meaning" },
+  { n:37, title:"The Myth of Sisyphus", author:"Albert Camus", year:1942, cat:"Existentialism & Meaning" },
+  { n:38, title:"Man's Search for Meaning", author:"Viktor Frankl", year:1946, cat:"Existentialism & Meaning" },
+  { n:39, title:"Fear and Trembling", author:"Søren Kierkegaard", year:1843, cat:"Existentialism & Meaning" },
+  { n:40, title:"The Stranger", author:"Albert Camus", year:1942, cat:"Existentialism & Meaning" },
+  { n:41, title:"Steppenwolf", author:"Hermann Hesse", year:1927, cat:"Existentialism & Meaning" },
+  { n:42, title:"Either/Or", author:"Søren Kierkegaard", year:1843, cat:"Existentialism & Meaning" },
+  { n:43, title:"The Denial of Death", author:"Ernest Becker", year:1973, cat:"Existentialism & Meaning" },
+  { n:44, title:"I and Thou", author:"Martin Buber", year:1923, cat:"Existentialism & Meaning" },
+  { n:45, title:"The Second Sex", author:"Simone de Beauvoir", year:1949, cat:"Existentialism & Meaning" },
+
+  // ── PHILOSOPHY: STOICISM ──
+  { n:46, title:"Letters from a Stoic", author:"Seneca", year:65, cat:"Stoicism" },
+  { n:47, title:"Discourses", author:"Epictetus", year:108, cat:"Stoicism" },
+  { n:48, title:"The Enchiridion", author:"Epictetus", year:135, cat:"Stoicism" },
+  { n:49, title:"On the Shortness of Life", author:"Seneca", year:49, cat:"Stoicism" },
+  { n:50, title:"A Guide to the Good Life", author:"William B. Irvine", year:2008, cat:"Stoicism" },
+
+  // ── PSYCHOLOGY: COGNITIVE & BEHAVIORAL ──
+  { n:51, title:"Thinking, Fast and Slow", author:"Daniel Kahneman", year:2011, cat:"Cognitive Psychology" },
+  { n:52, title:"Influence", author:"Robert Cialdini", year:1984, cat:"Cognitive Psychology" },
+  { n:53, title:"Predictably Irrational", author:"Dan Ariely", year:2008, cat:"Cognitive Psychology" },
+  { n:54, title:"Mistakes Were Made (But Not by Me)", author:"Carol Tavris & Elliot Aronson", year:2007, cat:"Cognitive Psychology" },
+  { n:55, title:"The Psychology of Money", author:"Morgan Housel", year:2020, cat:"Cognitive Psychology" },
+  { n:56, title:"Nudge", author:"Thaler & Sunstein", year:2008, cat:"Cognitive Psychology" },
+  { n:57, title:"Fooled by Randomness", author:"Nassim Nicholas Taleb", year:2001, cat:"Cognitive Psychology" },
+  { n:58, title:"The Black Swan", author:"Nassim Nicholas Taleb", year:2007, cat:"Cognitive Psychology" },
+  { n:59, title:"Antifragile", author:"Nassim Nicholas Taleb", year:2012, cat:"Cognitive Psychology" },
+  { n:60, title:"You Are Not So Smart", author:"David McRaney", year:2011, cat:"Cognitive Psychology" },
+  { n:61, title:"The Art of Thinking Clearly", author:"Rolf Dobelli", year:2011, cat:"Cognitive Psychology" },
+  { n:62, title:"Incognito", author:"David Eagleman", year:2011, cat:"Cognitive Psychology" },
+  { n:63, title:"Subliminal", author:"Leonard Mlodinow", year:2012, cat:"Cognitive Psychology" },
+  { n:64, title:"The Invisible Gorilla", author:"Chabris & Simons", year:2010, cat:"Cognitive Psychology" },
+  { n:65, title:"How We Decide", author:"Jonah Lehrer", year:2009, cat:"Cognitive Psychology" },
+
+  // ── PSYCHOLOGY: DEPTH & HUMANISTIC ──
+  { n:66, title:"Man and His Symbols", author:"Carl Gustav Jung", year:1964, cat:"Depth Psychology" },
+  { n:67, title:"The Archetypes and the Collective Unconscious", author:"Carl Gustav Jung", year:1959, cat:"Depth Psychology" },
+  { n:68, title:"Memories, Dreams, Reflections", author:"Carl Gustav Jung", year:1962, cat:"Depth Psychology" },
+  { n:69, title:"Civilization and Its Discontents", author:"Sigmund Freud", year:1930, cat:"Depth Psychology" },
+  { n:70, title:"The Interpretation of Dreams", author:"Sigmund Freud", year:1900, cat:"Depth Psychology" },
+  { n:71, title:"Toward a Psychology of Being", author:"Abraham Maslow", year:1962, cat:"Depth Psychology" },
+  { n:72, title:"The Road Less Travelled", author:"M. Scott Peck", year:1978, cat:"Depth Psychology" },
+  { n:73, title:"Care of the Soul", author:"Thomas Moore", year:1992, cat:"Depth Psychology" },
+  { n:74, title:"Iron John", author:"Robert Bly", year:1990, cat:"Depth Psychology" },
+  { n:75, title:"The Hero with a Thousand Faces", author:"Joseph Campbell", year:1949, cat:"Depth Psychology" },
+
+  // ── PSYCHOLOGY: TRAUMA & HEALING ──
+  { n:76, title:"The Body Keeps the Score", author:"Bessel van der Kolk", year:2014, cat:"Trauma & Healing" },
+  { n:77, title:"When the Body Says No", author:"Gabor Maté", year:2003, cat:"Trauma & Healing" },
+  { n:78, title:"In the Realm of Hungry Ghosts", author:"Gabor Maté", year:2008, cat:"Trauma & Healing" },
+  { n:79, title:"Scattered Minds", author:"Gabor Maté", year:1999, cat:"Trauma & Healing" },
+  { n:80, title:"Trauma and Recovery", author:"Judith Herman", year:1992, cat:"Trauma & Healing" },
+  { n:81, title:"The Drama of the Gifted Child", author:"Alice Miller", year:1979, cat:"Trauma & Healing" },
+  { n:82, title:"Adult Children of Emotionally Immature Parents", author:"Lindsay C. Gibson", year:2015, cat:"Trauma & Healing" },
+  { n:83, title:"Waking the Tiger", author:"Peter Levine", year:1997, cat:"Trauma & Healing" },
+
+  // ── NEUROSCIENCE & MIND ──
+  { n:84, title:"The Brain That Changes Itself", author:"Norman Doidge", year:2007, cat:"Neuroscience & Mind" },
+  { n:85, title:"Behave", author:"Robert Sapolsky", year:2017, cat:"Neuroscience & Mind" },
+  { n:86, title:"Why Zebras Don't Get Ulcers", author:"Robert Sapolsky", year:1994, cat:"Neuroscience & Mind" },
+  { n:87, title:"The Tell-Tale Brain", author:"V.S. Ramachandran", year:2011, cat:"Neuroscience & Mind" },
+  { n:88, title:"Phantoms in the Brain", author:"V.S. Ramachandran", year:1998, cat:"Neuroscience & Mind" },
+  { n:89, title:"How Emotions Are Made", author:"Lisa Feldman Barrett", year:2017, cat:"Neuroscience & Mind" },
+  { n:90, title:"The Emotional Brain", author:"Joseph LeDoux", year:1996, cat:"Neuroscience & Mind" },
+  { n:91, title:"Self Comes to Mind", author:"Antonio Damasio", year:2010, cat:"Neuroscience & Mind" },
+  { n:92, title:"Descartes' Error", author:"Antonio Damasio", year:1994, cat:"Neuroscience & Mind" },
+  { n:93, title:"The Master and His Emissary", author:"Iain McGilchrist", year:2009, cat:"Neuroscience & Mind" },
+
+  // ── CONSCIOUSNESS & PERCEPTION ──
+  { n:94, title:"The Doors of Perception", author:"Aldous Huxley", year:1954, cat:"Consciousness" },
+  { n:95, title:"Consciousness Explained", author:"Daniel Dennett", year:1991, cat:"Consciousness" },
+  { n:96, title:"The Conscious Mind", author:"David Chalmers", year:1996, cat:"Consciousness" },
+  { n:97, title:"Gödel, Escher, Bach", author:"Douglas Hofstadter", year:1979, cat:"Consciousness" },
+  { n:98, title:"I Am a Strange Loop", author:"Douglas Hofstadter", year:2007, cat:"Consciousness" },
+  { n:99, title:"The Origin of Consciousness in the Breakdown of the Bicameral Mind", author:"Julian Jaynes", year:1976, cat:"Consciousness" },
+  { n:100, title:"Being No One", author:"Thomas Metzinger", year:2003, cat:"Consciousness" },
+  { n:101, title:"The Ego Tunnel", author:"Thomas Metzinger", year:2009, cat:"Consciousness" },
+  { n:102, title:"Altered States of Consciousness", author:"Charles Tart", year:1969, cat:"Consciousness" },
+  { n:103, title:"The User Illusion", author:"Tor Nørretranders", year:1991, cat:"Consciousness" },
+
+  // ── PHYSICS & COSMOLOGY ──
+  { n:104, title:"A Brief History of Time", author:"Stephen Hawking", year:1988, cat:"Physics & Cosmology" },
+  { n:105, title:"The Elegant Universe", author:"Brian Greene", year:1999, cat:"Physics & Cosmology" },
+  { n:106, title:"The Fabric of Reality", author:"David Deutsch", year:1997, cat:"Physics & Cosmology" },
+  { n:107, title:"Surely You're Joking, Mr. Feynman!", author:"Richard Feynman", year:1985, cat:"Physics & Cosmology" },
+  { n:108, title:"QED: The Strange Theory of Light and Matter", author:"Richard Feynman", year:1985, cat:"Physics & Cosmology" },
+  { n:109, title:"The Character of Physical Law", author:"Richard Feynman", year:1965, cat:"Physics & Cosmology" },
+  { n:110, title:"Cosmos", author:"Carl Sagan", year:1980, cat:"Physics & Cosmology" },
+  { n:111, title:"Pale Blue Dot", author:"Carl Sagan", year:1994, cat:"Physics & Cosmology" },
+  { n:112, title:"The Demon-Haunted World", author:"Carl Sagan", year:1995, cat:"Physics & Cosmology" },
+  { n:113, title:"Seven Brief Lessons on Physics", author:"Carlo Rovelli", year:2014, cat:"Physics & Cosmology" },
+  { n:114, title:"The Order of Time", author:"Carlo Rovelli", year:2017, cat:"Physics & Cosmology" },
+  { n:115, title:"Reality Is Not What It Seems", author:"Carlo Rovelli", year:2014, cat:"Physics & Cosmology" },
+  { n:116, title:"Something Deeply Hidden", author:"Sean Carroll", year:2019, cat:"Physics & Cosmology" },
+  { n:117, title:"The Big Picture", author:"Sean Carroll", year:2016, cat:"Physics & Cosmology" },
+  { n:118, title:"In Search of Schrödinger's Cat", author:"John Gribbin", year:1984, cat:"Physics & Cosmology" },
+
+  // ── BIOLOGY & EVOLUTION ──
+  { n:119, title:"The Selfish Gene", author:"Richard Dawkins", year:1976, cat:"Biology & Evolution" },
+  { n:120, title:"The Blind Watchmaker", author:"Richard Dawkins", year:1986, cat:"Biology & Evolution" },
+  { n:121, title:"The Extended Phenotype", author:"Richard Dawkins", year:1982, cat:"Biology & Evolution" },
+  { n:122, title:"The Origins of Species", author:"Charles Darwin", year:1859, cat:"Biology & Evolution" },
+  { n:123, title:"The Descent of Man", author:"Charles Darwin", year:1871, cat:"Biology & Evolution" },
+  { n:124, title:"Ever Since Darwin", author:"Stephen Jay Gould", year:1977, cat:"Biology & Evolution" },
+  { n:125, title:"Full House", author:"Stephen Jay Gould", year:1996, cat:"Biology & Evolution" },
+  { n:126, title:"The Ancestor's Tale", author:"Richard Dawkins", year:2004, cat:"Biology & Evolution" },
+  { n:127, title:"Why Evolution Is True", author:"Jerry Coyne", year:2009, cat:"Biology & Evolution" },
+  { n:128, title:"The Tangled Tree", author:"David Quammen", year:2018, cat:"Biology & Evolution" },
+  { n:129, title:"Symbiotic Planet", author:"Lynn Margulis", year:1998, cat:"Biology & Evolution" },
+  { n:130, title:"Life on the Edge", author:"Jim Al-Khalili", year:2014, cat:"Biology & Evolution" },
+
+  // ── COMPLEXITY & SYSTEMS ──
+  { n:131, title:"Thinking in Systems", author:"Donella Meadows", year:2008, cat:"Systems & Complexity" },
+  { n:132, title:"The Systems Bible", author:"John Gall", year:1975, cat:"Systems & Complexity" },
+  { n:133, title:"Emergence", author:"Steven Johnson", year:2001, cat:"Systems & Complexity" },
+  { n:134, title:"Complexity", author:"M. Mitchell Waldrop", year:1992, cat:"Systems & Complexity" },
+  { n:135, title:"At Home in the Universe", author:"Stuart Kauffman", year:1995, cat:"Systems & Complexity" },
+  { n:136, title:"The Fifth Discipline", author:"Peter Senge", year:1990, cat:"Systems & Complexity" },
+  { n:137, title:"Scale", author:"Geoffrey West", year:2017, cat:"Systems & Complexity" },
+  { n:138, title:"The Web of Life", author:"Fritjof Capra", year:1996, cat:"Systems & Complexity" },
+
+  // ── HISTORY OF CIVILIZATION ──
+  { n:139, title:"Sapiens", author:"Yuval Noah Harari", year:2011, cat:"History of Civilization" },
+  { n:140, title:"Homo Deus", author:"Yuval Noah Harari", year:2015, cat:"History of Civilization" },
+  { n:141, title:"21 Lessons for the 21st Century", author:"Yuval Noah Harari", year:2018, cat:"History of Civilization" },
+  { n:142, title:"Guns, Germs, and Steel", author:"Jared Diamond", year:1997, cat:"History of Civilization" },
+  { n:143, title:"The Third Chimpanzee", author:"Jared Diamond", year:1991, cat:"History of Civilization" },
+  { n:144, title:"Collapse", author:"Jared Diamond", year:2005, cat:"History of Civilization" },
+  { n:145, title:"The Story of Civilization (Vol. I)", author:"Will Durant", year:1935, cat:"History of Civilization" },
+  { n:146, title:"The Lessons of History", author:"Will & Ariel Durant", year:1968, cat:"History of Civilization" },
+  { n:147, title:"A Study of History", author:"Arnold Toynbee", year:1934, cat:"History of Civilization" },
+  { n:148, title:"The Rise and Fall of the Great Powers", author:"Paul Kennedy", year:1987, cat:"History of Civilization" },
+  { n:149, title:"The Silk Roads", author:"Peter Frankopan", year:2015, cat:"History of Civilization" },
+  { n:150, title:"The Fate of Civilizations", author:"Carroll Quigley", year:1961, cat:"History of Civilization" },
+  { n:151, title:"The Origins of Political Order", author:"Francis Fukuyama", year:2011, cat:"History of Civilization" },
+  { n:152, title:"The End of History and the Last Man", author:"Francis Fukuyama", year:1992, cat:"History of Civilization" },
+  { n:153, title:"The Clash of Civilizations", author:"Samuel Huntington", year:1996, cat:"History of Civilization" },
+
+  // ── ANTHROPOLOGY & HUMAN NATURE ──
+  { n:154, title:"The Naked Ape", author:"Desmond Morris", year:1967, cat:"Anthropology & Human Nature" },
+  { n:155, title:"Human: The Science Behind What Makes Us Unique", author:"Michael Gazzaniga", year:2008, cat:"Anthropology & Human Nature" },
+  { n:156, title:"The Social Animal", author:"Elliot Aronson", year:1972, cat:"Anthropology & Human Nature" },
+  { n:157, title:"The Lucifer Effect", author:"Philip Zimbardo", year:2007, cat:"Anthropology & Human Nature" },
+  { n:158, title:"Grooming, Gossip, and the Evolution of Language", author:"Robin Dunbar", year:1996, cat:"Anthropology & Human Nature" },
+  { n:159, title:"The Righteous Mind", author:"Jonathan Haidt", year:2012, cat:"Anthropology & Human Nature" },
+  { n:160, title:"The Coddling of the American Mind", author:"Haidt & Lukianoff", year:2018, cat:"Anthropology & Human Nature" },
+  { n:161, title:"Strangers to Ourselves", author:"Timothy Wilson", year:2002, cat:"Anthropology & Human Nature" },
+  { n:162, title:"The Power of Strangers", author:"Joe Keohane", year:2021, cat:"Anthropology & Human Nature" },
+  { n:163, title:"The Status Game", author:"Will Storr", year:2021, cat:"Anthropology & Human Nature" },
+
+  // ── ECONOMICS & POLITICAL ECONOMY ──
+  { n:164, title:"The Wealth of Nations", author:"Adam Smith", year:1776, cat:"Economics & Political Economy" },
+  { n:165, title:"Capital", author:"Karl Marx", year:1867, cat:"Economics & Political Economy" },
+  { n:166, title:"The General Theory of Employment, Interest and Money", author:"John Maynard Keynes", year:1936, cat:"Economics & Political Economy" },
+  { n:167, title:"The Road to Serfdom", author:"Friedrich Hayek", year:1944, cat:"Economics & Political Economy" },
+  { n:168, title:"Capitalism and Freedom", author:"Milton Friedman", year:1962, cat:"Economics & Political Economy" },
+  { n:169, title:"Freakonomics", author:"Levitt & Dubner", year:2005, cat:"Economics & Political Economy" },
+  { n:170, title:"The Worldly Philosophers", author:"Robert Heilbroner", year:1953, cat:"Economics & Political Economy" },
+  { n:171, title:"Thinking Strategically", author:"Dixit & Nalebuff", year:1991, cat:"Economics & Political Economy" },
+  { n:172, title:"Poor Economics", author:"Banerjee & Duflo", year:2011, cat:"Economics & Political Economy" },
+  { n:173, title:"The Origin of Wealth", author:"Eric Beinhocker", year:2006, cat:"Economics & Political Economy" },
+  { n:174, title:"Debt: The First 5000 Years", author:"David Graeber", year:2011, cat:"Economics & Political Economy" },
+  { n:175, title:"23 Things They Don't Tell You About Capitalism", author:"Ha-Joon Chang", year:2010, cat:"Economics & Political Economy" },
+
+  // ── SOCIOLOGY & CULTURE ──
+  { n:176, title:"The Sociological Imagination", author:"C. Wright Mills", year:1959, cat:"Sociology & Culture" },
+  { n:177, title:"The Structure of Scientific Revolutions", author:"Thomas Kuhn", year:1962, cat:"Sociology & Culture" },
+  { n:178, title:"Manufacturing Consent", author:"Chomsky & Herman", year:1988, cat:"Sociology & Culture" },
+  { n:179, title:"The Culture of Narcissism", author:"Christopher Lasch", year:1979, cat:"Sociology & Culture" },
+  { n:180, title:"Bowling Alone", author:"Robert Putnam", year:2000, cat:"Sociology & Culture" },
+  { n:181, title:"The Presentation of Self in Everyday Life", author:"Erving Goffman", year:1959, cat:"Sociology & Culture" },
+  { n:182, title:"Discipline and Punish", author:"Michel Foucault", year:1975, cat:"Sociology & Culture" },
+  { n:183, title:"The Order of Things", author:"Michel Foucault", year:1966, cat:"Sociology & Culture" },
+  { n:184, title:"Simulacra and Simulation", author:"Jean Baudrillard", year:1981, cat:"Sociology & Culture" },
+  { n:185, title:"One-Dimensional Man", author:"Herbert Marcuse", year:1964, cat:"Sociology & Culture" },
+
+  // ── LANGUAGE, COMMUNICATION & RHETORIC ──
+  { n:186, title:"The Elements of Style", author:"Strunk & White", year:1959, cat:"Language & Communication" },
+  { n:187, title:"On Writing Well", author:"William Zinsser", year:1976, cat:"Language & Communication" },
+  { n:188, title:"Bird by Bird", author:"Anne Lamott", year:1994, cat:"Language & Communication" },
+  { n:189, title:"Metaphors We Live By", author:"Lakoff & Johnson", year:1980, cat:"Language & Communication" },
+  { n:190, title:"The Language Instinct", author:"Steven Pinker", year:1994, cat:"Language & Communication" },
+  { n:191, title:"Words and Rules", author:"Steven Pinker", year:1999, cat:"Language & Communication" },
+  { n:192, title:"How to Win Friends and Influence People", author:"Dale Carnegie", year:1936, cat:"Language & Communication" },
+  { n:193, title:"Never Split the Difference", author:"Chris Voss", year:2016, cat:"Language & Communication" },
+  { n:194, title:"Rhetoric", author:"Aristotle", year:-350, cat:"Language & Communication" },
+  { n:195, title:"The Art of Rhetoric", author:"Cicero", year:-55, cat:"Language & Communication" },
+
+  // ── SELF-MASTERY & FOCUS ──
+  { n:196, title:"Deep Work", author:"Cal Newport", year:2016, cat:"Self-Mastery & Focus" },
+  { n:197, title:"Digital Minimalism", author:"Cal Newport", year:2019, cat:"Self-Mastery & Focus" },
+  { n:198, title:"Flow: The Psychology of Optimal Experience", author:"Mihaly Csikszentmihalyi", year:1990, cat:"Self-Mastery & Focus" },
+  { n:199, title:"The War of Art", author:"Steven Pressfield", year:2002, cat:"Self-Mastery & Focus" },
+  { n:200, title:"Mastery", author:"Robert Greene", year:2012, cat:"Self-Mastery & Focus" },
+  { n:201, title:"The 48 Laws of Power", author:"Robert Greene", year:1998, cat:"Self-Mastery & Focus" },
+  { n:202, title:"The Laws of Human Nature", author:"Robert Greene", year:2018, cat:"Self-Mastery & Focus" },
+  { n:203, title:"Atomic Habits", author:"James Clear", year:2018, cat:"Self-Mastery & Focus" },
+  { n:204, title:"The Power of Habit", author:"Charles Duhigg", year:2012, cat:"Self-Mastery & Focus" },
+  { n:205, title:"Willpower", author:"Baumeister & Tierney", year:2011, cat:"Self-Mastery & Focus" },
+  { n:206, title:"Can't Hurt Me", author:"David Goggins", year:2018, cat:"Self-Mastery & Focus" },
+  { n:207, title:"Extreme Ownership", author:"Willink & Babin", year:2015, cat:"Self-Mastery & Focus" },
+  { n:208, title:"The Obstacle Is the Way", author:"Ryan Holiday", year:2014, cat:"Self-Mastery & Focus" },
+  { n:209, title:"Ego Is the Enemy", author:"Ryan Holiday", year:2016, cat:"Self-Mastery & Focus" },
+  { n:210, title:"Stillness Is the Key", author:"Ryan Holiday", year:2019, cat:"Self-Mastery & Focus" },
+
+  // ── MEDITATION & INNER LIFE ──
+  { n:211, title:"The Miracle of Mindfulness", author:"Thich Nhat Hanh", year:1975, cat:"Meditation & Inner Life" },
+  { n:212, title:"Wherever You Go, There You Are", author:"Jon Kabat-Zinn", year:1994, cat:"Meditation & Inner Life" },
+  { n:213, title:"The Power of Now", author:"Eckhart Tolle", year:1997, cat:"Meditation & Inner Life" },
+  { n:214, title:"A New Earth", author:"Eckhart Tolle", year:2005, cat:"Meditation & Inner Life" },
+  { n:215, title:"Waking Up", author:"Sam Harris", year:2014, cat:"Meditation & Inner Life" },
+  { n:216, title:"The Mind Illuminated", author:"Culadasa (John Yates)", year:2015, cat:"Meditation & Inner Life" },
+  { n:217, title:"Catching the Big Fish", author:"David Lynch", year:2006, cat:"Meditation & Inner Life" },
+  { n:218, title:"The Untethered Soul", author:"Michael A. Singer", year:2007, cat:"Meditation & Inner Life" },
+  { n:219, title:"Be Here Now", author:"Ram Dass", year:1971, cat:"Meditation & Inner Life" },
+  { n:220, title:"The Perennial Philosophy", author:"Aldous Huxley", year:1945, cat:"Meditation & Inner Life" },
+
+  // ── RELIGION & MYSTICISM ──
+  { n:221, title:"The Bible", author:"Various Authors", year:-1200, cat:"Religion & Mysticism" },
+  { n:222, title:"The Quran", author:"Anonymous", year:632, cat:"Religion & Mysticism" },
+  { n:223, title:"The Varieties of Religious Experience", author:"William James", year:1902, cat:"Religion & Mysticism" },
+  { n:224, title:"The Sacred and the Profane", author:"Mircea Eliade", year:1957, cat:"Religion & Mysticism" },
+  { n:225, title:"The Golden Bough", author:"James George Frazer", year:1890, cat:"Religion & Mysticism" },
+  { n:226, title:"God Is Not Great", author:"Christopher Hitchens", year:2007, cat:"Religion & Mysticism" },
+  { n:227, title:"The End of Faith", author:"Sam Harris", year:2004, cat:"Religion & Mysticism" },
+  { n:228, title:"The God Delusion", author:"Richard Dawkins", year:2006, cat:"Religion & Mysticism" },
+  { n:229, title:"When God Was a Woman", author:"Merlin Stone", year:1976, cat:"Religion & Mysticism" },
+  { n:230, title:"The Gnostic Gospels", author:"Elaine Pagels", year:1979, cat:"Religion & Mysticism" },
+
+  // ── GEOPOLITICS & POWER ──
+  { n:231, title:"The Grand Chessboard", author:"Zbigniew Brzezinski", year:1997, cat:"Geopolitics & Power" },
+  { n:232, title:"The Geography of Power", author:"Robert Kaplan", year:2012, cat:"Geopolitics & Power" },
+  { n:233, title:"Prisoners of Geography", author:"Tim Marshall", year:2015, cat:"Geopolitics & Power" },
+  { n:234, title:"The Revenge of Geography", author:"Robert Kaplan", year:2012, cat:"Geopolitics & Power" },
+  { n:235, title:"1984", author:"George Orwell", year:1949, cat:"Geopolitics & Power" },
+  { n:236, title:"Brave New World", author:"Aldous Huxley", year:1932, cat:"Geopolitics & Power" },
+  { n:237, title:"The Origins of Totalitarianism", author:"Hannah Arendt", year:1951, cat:"Geopolitics & Power" },
+  { n:238, title:"On Violence", author:"Hannah Arendt", year:1970, cat:"Geopolitics & Power" },
+  { n:239, title:"Manufacturing Public Opinion", author:"Walter Lippmann", year:1922, cat:"Geopolitics & Power" },
+  { n:240, title:"The True Believer", author:"Eric Hoffer", year:1951, cat:"Geopolitics & Power" },
+
+  // ── MATHEMATICS & LOGIC ──
+  { n:241, title:"How to Prove It", author:"Daniel Velleman", year:1994, cat:"Mathematics & Logic" },
+  { n:242, title:"Fermat's Last Theorem", author:"Simon Singh", year:1997, cat:"Mathematics & Logic" },
+  { n:243, title:"The Man Who Loved Only Numbers", author:"Paul Hoffman", year:1998, cat:"Mathematics & Logic" },
+  { n:244, title:"Prime Obsession", author:"John Derbyshire", year:2003, cat:"Mathematics & Logic" },
+  { n:245, title:"The Music of the Primes", author:"Marcus du Sautoy", year:2003, cat:"Mathematics & Logic" },
+  { n:246, title:"Proofs from THE BOOK", author:"Aigner & Ziegler", year:1998, cat:"Mathematics & Logic" },
+  { n:247, title:"Mathematics: The Loss of Certainty", author:"Morris Kline", year:1980, cat:"Mathematics & Logic" },
+  { n:248, title:"An Introduction to Mathematics", author:"Alfred North Whitehead", year:1911, cat:"Mathematics & Logic" },
+  { n:249, title:"The Drunkard's Walk", author:"Leonard Mlodinow", year:2008, cat:"Mathematics & Logic" },
+  { n:250, title:"How Not to Be Wrong", author:"Jordan Ellenberg", year:2014, cat:"Mathematics & Logic" },
+
+  // ── TECHNOLOGY & THE FUTURE ──
+  { n:251, title:"The Innovators", author:"Walter Isaacson", year:2014, cat:"Technology & the Future" },
+  { n:252, title:"The Age of Surveillance Capitalism", author:"Shoshana Zuboff", year:2019, cat:"Technology & the Future" },
+  { n:253, title:"Life 3.0", author:"Max Tegmark", year:2017, cat:"Technology & the Future" },
+  { n:254, title:"The Singularity Is Near", author:"Ray Kurzweil", year:2005, cat:"Technology & the Future" },
+  { n:255, title:"The Second Machine Age", author:"Brynjolfsson & McAfee", year:2014, cat:"Technology & the Future" },
+  { n:256, title:"Weapons of Math Destruction", author:"Cathy O'Neil", year:2016, cat:"Technology & the Future" },
+  { n:257, title:"The Shallows", author:"Nicholas Carr", year:2010, cat:"Technology & the Future" },
+  { n:258, title:"Tools for Conviviality", author:"Ivan Illich", year:1973, cat:"Technology & the Future" },
+  { n:259, title:"Understanding Media", author:"Marshall McLuhan", year:1964, cat:"Technology & the Future" },
+  { n:260, title:"The Medium Is the Massage", author:"Marshall McLuhan", year:1967, cat:"Technology & the Future" },
+
+  // ── DECISION MAKING & RATIONALITY ──
+  { n:261, title:"Superforecasting", author:"Tetlock & Gardner", year:2015, cat:"Decision-Making & Rationality" },
+  { n:262, title:"The Intelligence Trap", author:"David Robson", year:2019, cat:"Decision-Making & Rationality" },
+  { n:263, title:"Thinking in Bets", author:"Annie Duke", year:2018, cat:"Decision-Making & Rationality" },
+  { n:264, title:"Sources of Power", author:"Gary Klein", year:1998, cat:"Decision-Making & Rationality" },
+  { n:265, title:"The Checklist Manifesto", author:"Atul Gawande", year:2009, cat:"Decision-Making & Rationality" },
+  { n:266, title:"Poor Charlie's Almanack", author:"Charlie Munger", year:2005, cat:"Decision-Making & Rationality" },
+  { n:267, title:"The Great Mental Models Vol. 1", author:"Shane Parrish", year:2019, cat:"Decision-Making & Rationality" },
+  { n:268, title:"Seeking Wisdom", author:"Peter Bevelin", year:2003, cat:"Decision-Making & Rationality" },
+  { n:269, title:"Against Method", author:"Paul Feyerabend", year:1975, cat:"Decision-Making & Rationality" },
+  { n:270, title:"The Logic of Scientific Discovery", author:"Karl Popper", year:1934, cat:"Decision-Making & Rationality" },
+
+  // ── EMOTIONAL INTELLIGENCE ──
+  { n:271, title:"Emotional Intelligence", author:"Daniel Goleman", year:1995, cat:"Emotional Intelligence" },
+  { n:272, title:"Social Intelligence", author:"Daniel Goleman", year:2006, cat:"Emotional Intelligence" },
+  { n:273, title:"Atlas of the Heart", author:"Brené Brown", year:2021, cat:"Emotional Intelligence" },
+  { n:274, title:"Daring Greatly", author:"Brené Brown", year:2012, cat:"Emotional Intelligence" },
+  { n:275, title:"Running on Empty", author:"Jonice Webb", year:2012, cat:"Emotional Intelligence" },
+  { n:276, title:"The Emotionally Absent Mother", author:"Jasmin Lee Cori", year:2010, cat:"Emotional Intelligence" },
+  { n:277, title:"Nonviolent Communication", author:"Marshall Rosenberg", year:1999, cat:"Emotional Intelligence" },
+  { n:278, title:"Hold Me Tight", author:"Sue Johnson", year:2008, cat:"Emotional Intelligence" },
+  { n:279, title:"The Science of Trust", author:"John Gottman", year:2011, cat:"Emotional Intelligence" },
+  { n:280, title:"Feeling Good", author:"David D. Burns", year:1980, cat:"Emotional Intelligence" },
+
+  // ── CREATIVITY & ART ──
+  { n:281, title:"The Creative Act: A Way of Being", author:"Rick Rubin", year:2023, cat:"Creativity & Art" },
+  { n:282, title:"Steal Like an Artist", author:"Austin Kleon", year:2012, cat:"Creativity & Art" },
+  { n:283, title:"The Art Spirit", author:"Robert Henri", year:1923, cat:"Creativity & Art" },
+  { n:284, title:"Ways of Seeing", author:"John Berger", year:1972, cat:"Creativity & Art" },
+  { n:285, title:"Art and Fear", author:"Bayles & Orland", year:1993, cat:"Creativity & Art" },
+  { n:286, title:"The Artist's Way", author:"Julia Cameron", year:1992, cat:"Creativity & Art" },
+  { n:287, title:"On Photography", author:"Susan Sontag", year:1977, cat:"Creativity & Art" },
+  { n:288, title:"Regarding the Pain of Others", author:"Susan Sontag", year:2003, cat:"Creativity & Art" },
+  { n:289, title:"The Painted Word", author:"Tom Wolfe", year:1975, cat:"Creativity & Art" },
+  { n:290, title:"The Lives of the Artists", author:"Giorgio Vasari", year:1550, cat:"Creativity & Art" },
+
+  // ── LITERATURE & TRANSFORMATIVE FICTION ──
+  { n:291, title:"Crime and Punishment", author:"Fyodor Dostoevsky", year:1866, cat:"Transformative Fiction" },
+  { n:292, title:"The Brothers Karamazov", author:"Fyodor Dostoevsky", year:1880, cat:"Transformative Fiction" },
+  { n:293, title:"The Idiot", author:"Fyodor Dostoevsky", year:1869, cat:"Transformative Fiction" },
+  { n:294, title:"War and Peace", author:"Leo Tolstoy", year:1869, cat:"Transformative Fiction" },
+  { n:295, title:"Anna Karenina", author:"Leo Tolstoy", year:1878, cat:"Transformative Fiction" },
+  { n:296, title:"The Death of Ivan Ilyich", author:"Leo Tolstoy", year:1886, cat:"Transformative Fiction" },
+  { n:297, title:"Ulysses", author:"James Joyce", year:1922, cat:"Transformative Fiction" },
+  { n:298, title:"In Search of Lost Time", author:"Marcel Proust", year:1913, cat:"Transformative Fiction" },
+  { n:299, title:"The Trial", author:"Franz Kafka", year:1925, cat:"Transformative Fiction" },
+  { n:300, title:"The Castle", author:"Franz Kafka", year:1926, cat:"Transformative Fiction" },
+  { n:301, title:"One Hundred Years of Solitude", author:"Gabriel García Márquez", year:1967, cat:"Transformative Fiction" },
+  { n:302, title:"Moby Dick", author:"Herman Melville", year:1851, cat:"Transformative Fiction" },
+  { n:303, title:"Middlemarch", author:"George Eliot", year:1871, cat:"Transformative Fiction" },
+  { n:304, title:"The Divine Comedy", author:"Dante Alighieri", year:1320, cat:"Transformative Fiction" },
+  { n:305, title:"Don Quixote", author:"Miguel de Cervantes", year:1605, cat:"Transformative Fiction" },
+
+  // ── BIOGRAPHY & LIVES OF GREAT MINDS ──
+  { n:306, title:"Leonardo da Vinci", author:"Walter Isaacson", year:2017, cat:"Biography & Great Minds" },
+  { n:307, title:"Einstein: His Life and Universe", author:"Walter Isaacson", year:2007, cat:"Biography & Great Minds" },
+  { n:308, title:"Steve Jobs", author:"Walter Isaacson", year:2011, cat:"Biography & Great Minds" },
+  { n:309, title:"The Autobiography of Benjamin Franklin", author:"Benjamin Franklin", year:1791, cat:"Biography & Great Minds" },
+  { n:310, title:"Long Walk to Freedom", author:"Nelson Mandela", year:1994, cat:"Biography & Great Minds" },
+  { n:311, title:"My Experiments with Truth", author:"Mahatma Gandhi", year:1927, cat:"Biography & Great Minds" },
+  { n:312, title:"The Diary of a Young Girl", author:"Anne Frank", year:1947, cat:"Biography & Great Minds" },
+  { n:313, title:"Surely You're Joking, Mr. Feynman!", author:"Richard Feynman", year:1985, cat:"Biography & Great Minds" },
+  { n:314, title:"The Double Helix", author:"James Watson", year:1968, cat:"Biography & Great Minds" },
+  { n:315, title:"The Story of My Life", author:"Helen Keller", year:1903, cat:"Biography & Great Minds" },
+
+  // ── HEALTH, LONGEVITY & BODY ──
+  { n:316, title:"Why We Sleep", author:"Matthew Walker", year:2017, cat:"Health & Longevity" },
+  { n:317, title:"Lifespan", author:"David Sinclair", year:2019, cat:"Health & Longevity" },
+  { n:318, title:"Outlive", author:"Peter Attia", year:2023, cat:"Health & Longevity" },
+  { n:319, title:"The Molecule of More", author:"Lieberman & Long", year:2018, cat:"Health & Longevity" },
+  { n:320, title:"Breath", author:"James Nestor", year:2020, cat:"Health & Longevity" },
+  { n:321, title:"How to Change Your Mind", author:"Michael Pollan", year:2018, cat:"Health & Longevity" },
+  { n:322, title:"Spark", author:"John Ratey", year:2008, cat:"Health & Longevity" },
+  { n:323, title:"The Circadian Code", author:"Satchin Panda", year:2019, cat:"Health & Longevity" },
+  { n:324, title:"Good Calories, Bad Calories", author:"Gary Taubes", year:2007, cat:"Health & Longevity" },
+  { n:325, title:"The Omnivore's Dilemma", author:"Michael Pollan", year:2006, cat:"Health & Longevity" },
+
+  // ── EPISTEMOLOGY & PHILOSOPHY OF SCIENCE ──
+  { n:326, title:"The Structure of Scientific Revolutions", author:"Thomas Kuhn", year:1962, cat:"Epistemology & Philosophy of Science" },
+  { n:327, title:"Conjectures and Refutations", author:"Karl Popper", year:1963, cat:"Epistemology & Philosophy of Science" },
+  { n:328, title:"The Beginning of Infinity", author:"David Deutsch", year:2011, cat:"Epistemology & Philosophy of Science" },
+  { n:329, title:"Science and the Modern World", author:"Alfred North Whitehead", year:1925, cat:"Epistemology & Philosophy of Science" },
+  { n:330, title:"Against Method", author:"Paul Feyerabend", year:1975, cat:"Epistemology & Philosophy of Science" },
+  { n:331, title:"The Philosophy of Science", author:"Alexander Bird", year:1998, cat:"Epistemology & Philosophy of Science" },
+  { n:332, title:"Epistemology: A Contemporary Introduction", author:"Robert Audi", year:1998, cat:"Epistemology & Philosophy of Science" },
+  { n:333, title:"How the Mind Works", author:"Steven Pinker", year:1997, cat:"Epistemology & Philosophy of Science" },
+  { n:334, title:"The Stuff of Thought", author:"Steven Pinker", year:2007, cat:"Epistemology & Philosophy of Science" },
+  { n:335, title:"Maps of Meaning", author:"Jordan B. Peterson", year:1999, cat:"Epistemology & Philosophy of Science" },
+
+  // ── ETHICS & MORAL PHILOSOPHY ──
+  { n:336, title:"The Nicomachean Ethics", author:"Aristotle", year:-350, cat:"Ethics & Moral Philosophy" },
+  { n:337, title:"Utilitarianism", author:"John Stuart Mill", year:1863, cat:"Ethics & Moral Philosophy" },
+  { n:338, title:"Groundwork of the Metaphysics of Morals", author:"Immanuel Kant", year:1785, cat:"Ethics & Moral Philosophy" },
+  { n:339, title:"Justice: What's the Right Thing to Do?", author:"Michael Sandel", year:2009, cat:"Ethics & Moral Philosophy" },
+  { n:340, title:"A Theory of Justice", author:"John Rawls", year:1971, cat:"Ethics & Moral Philosophy" },
+  { n:341, title:"Anarchy, State, and Utopia", author:"Robert Nozick", year:1974, cat:"Ethics & Moral Philosophy" },
+  { n:342, title:"The Moral Landscape", author:"Sam Harris", year:2010, cat:"Ethics & Moral Philosophy" },
+  { n:343, title:"Practical Ethics", author:"Peter Singer", year:1979, cat:"Ethics & Moral Philosophy" },
+  { n:344, title:"The Expanding Circle", author:"Peter Singer", year:1981, cat:"Ethics & Moral Philosophy" },
+  { n:345, title:"Moral Tribes", author:"Joshua Greene", year:2013, cat:"Ethics & Moral Philosophy" },
+
+  // ── WEALTH, STRATEGY & LONG GAME ──
+  { n:346, title:"The Almanack of Naval Ravikant", author:"Eric Jorgenson", year:2020, cat:"Wealth & Long Game" },
+  { n:347, title:"Zero to One", author:"Peter Thiel", year:2014, cat:"Wealth & Long Game" },
+  { n:348, title:"The Millionaire Next Door", author:"Stanley & Danko", year:1996, cat:"Wealth & Long Game" },
+  { n:349, title:"The Intelligent Investor", author:"Benjamin Graham", year:1949, cat:"Wealth & Long Game" },
+  { n:350, title:"One Up on Wall Street", author:"Peter Lynch", year:1989, cat:"Wealth & Long Game" },
+  { n:351, title:"The Richest Man in Babylon", author:"George Clason", year:1926, cat:"Wealth & Long Game" },
+  { n:352, title:"The Snowball", author:"Alice Schroeder", year:2008, cat:"Wealth & Long Game" },
+  { n:353, title:"Principles", author:"Ray Dalio", year:2017, cat:"Wealth & Long Game" },
+  { n:354, title:"Good to Great", author:"Jim Collins", year:2001, cat:"Wealth & Long Game" },
+  { n:355, title:"Built to Last", author:"Collins & Porras", year:1994, cat:"Wealth & Long Game" },
+
+  // ── ECOLOGY & PLANET ──
+  { n:356, title:"Silent Spring", author:"Rachel Carson", year:1962, cat:"Ecology & Planet" },
+  { n:357, title:"The Sixth Extinction", author:"Elizabeth Kolbert", year:2014, cat:"Ecology & Planet" },
+  { n:358, title:"A Sand County Almanac", author:"Aldo Leopold", year:1949, cat:"Ecology & Planet" },
+  { n:359, title:"The Uninhabitable Earth", author:"David Wallace-Wells", year:2019, cat:"Ecology & Planet" },
+  { n:360, title:"Braiding Sweetgrass", author:"Robin Wall Kimmerer", year:2013, cat:"Ecology & Planet" },
+  { n:361, title:"The Hidden Life of Trees", author:"Peter Wohlleben", year:2015, cat:"Ecology & Planet" },
+  { n:362, title:"Underland", author:"Robert Macfarlane", year:2019, cat:"Ecology & Planet" },
+  { n:363, title:"The End of Nature", author:"Bill McKibben", year:1989, cat:"Ecology & Planet" },
+  { n:364, title:"Entangled Life", author:"Merlin Sheldrake", year:2020, cat:"Ecology & Planet" },
+  { n:365, title:"The World Without Us", author:"Alan Weisman", year:2007, cat:"Ecology & Planet" },
+];
+
+// ── GROUP BY CATEGORY ──
+const cats = {};
+const catIcons = {
+  "Western Philosophy": "⚖️",
+  "Eastern Philosophy": "☯️",
+  "Existentialism & Meaning": "🕯️",
+  "Stoicism": "🗿",
+  "Cognitive Psychology": "🧠",
+  "Depth Psychology": "🌊",
+  "Trauma & Healing": "🫀",
+  "Neuroscience & Mind": "🔬",
+  "Consciousness": "👁️",
+  "Physics & Cosmology": "🌌",
+  "Biology & Evolution": "🧬",
+  "Systems & Complexity": "🕸️",
+  "History of Civilization": "📜",
+  "Anthropology & Human Nature": "🦴",
+  "Economics & Political Economy": "⚡",
+  "Sociology & Culture": "🏛️",
+  "Language & Communication": "🗣️",
+  "Self-Mastery & Focus": "🎯",
+  "Meditation & Inner Life": "🧘",
+  "Religion & Mysticism": "✨",
+  "Geopolitics & Power": "🌍",
+  "Mathematics & Logic": "∞",
+  "Technology & the Future": "⚙️",
+  "Decision-Making & Rationality": "🎲",
+  "Emotional Intelligence": "❤️",
+  "Creativity & Art": "🎨",
+  "Transformative Fiction": "📖",
+  "Biography & Great Minds": "🧭",
+  "Health & Longevity": "⚕️",
+  "Epistemology & Philosophy of Science": "🔭",
+  "Ethics & Moral Philosophy": "⚖",
+  "Wealth & Long Game": "♟️",
+  "Ecology & Planet": "🌿",
+};
+
+BOOKS.forEach(b => {
+  if (!cats[b.cat]) cats[b.cat] = [];
+  cats[b.cat].push(b);
+});
+
+// ── RENDER ──
+const vault = document.getElementById('vault');
+const filterBtns = document.getElementById('filterBtns');
+const countDisplay = document.getElementById('countDisplay');
+const searchInput = document.getElementById('searchInput');
+
+// All filter
+let allBtn = document.createElement('button');
+allBtn.className = 'filter-btn active';
+allBtn.textContent = 'All';
+allBtn.dataset.cat = '';
+filterBtns.appendChild(allBtn);
+
+Object.keys(cats).forEach(cat => {
+  const btn = document.createElement('button');
+  btn.className = 'filter-btn';
+  btn.textContent = cat.split(':')[0].split('&')[0].trim();
+  btn.dataset.cat = cat;
+  filterBtns.appendChild(btn);
+});
+
+// Render sections
+const allCards = [];
+Object.keys(cats).forEach(cat => {
+  const section = document.createElement('section');
+  section.className = 'category-section';
+  section.dataset.cat = cat;
+
+  section.innerHTML = `
+    <div class="category-header">
+      <span class="category-icon">${catIcons[cat] || '📚'}</span>
+      <h2 class="category-title">${cat}</h2>
+      <span class="category-count">${cats[cat].length} books</span>
+    </div>
+    <div class="books-grid" id="grid-${cat.replace(/[^a-z0-9]/gi,'_')}"></div>
+  `;
+
+  vault.appendChild(section);
+
+  const grid = section.querySelector('.books-grid');
+  cats[cat].forEach((b, i) => {
+    const card = document.createElement('div');
+    card.className = 'book-card';
+    card.style.animationDelay = `${i * 0.03}s`;
+    card.dataset.cat = cat;
+    card.dataset.title = b.title.toLowerCase();
+    card.dataset.author = b.author.toLowerCase();
+    card.dataset.n = b.n;
+    card.innerHTML = `
+      <div class="book-num">№ ${String(b.n).padStart(3,'0')}</div>
+      <div class="book-title">${b.title}</div>
+      <div class="book-author">${b.author}</div>
+      <div class="book-year">${b.year < 0 ? Math.abs(b.year)+' BCE' : b.year+' CE'}</div>
+    `;
+    card.addEventListener('click', () => openModal(b));
+    grid.appendChild(card);
+    allCards.push(card);
+  });
+});
+
+// ── MODAL ──
+const overlay = document.getElementById('modalOverlay');
+const modalClose = document.getElementById('modalClose');
+
+function openModal(b) {
+  document.getElementById('mNum').textContent = `№ ${String(b.n).padStart(3,'0')} — ${b.cat}`;
+  document.getElementById('mTitle').textContent = b.title;
+  document.getElementById('mAuthor').textContent = b.author;
+  document.getElementById('mYear').textContent = b.year < 0 ? `${Math.abs(b.year)} BCE` : `${b.year} CE`;
+  document.getElementById('mCat').textContent = b.cat;
+  overlay.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeModal() {
+  overlay.classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+modalClose.addEventListener('click', closeModal);
+overlay.addEventListener('click', e => { if (e.target === overlay) closeModal(); });
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+
+// ── FILTER ──
+let activeFilter = '';
+
+filterBtns.addEventListener('click', e => {
+  const btn = e.target.closest('.filter-btn');
+  if (!btn) return;
+  activeFilter = btn.dataset.cat;
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  applyFilters();
+});
+
+searchInput.addEventListener('input', applyFilters);
+
+function applyFilters() {
+  const query = searchInput.value.toLowerCase().trim();
+  let visible = 0;
+
+  // Show/hide sections
+  document.querySelectorAll('.category-section').forEach(section => {
+    const cat = section.dataset.cat;
+    const show = !activeFilter || cat === activeFilter;
+    section.style.display = show ? '' : 'none';
+  });
+
+  allCards.forEach(card => {
+    const catMatch = !activeFilter || card.dataset.cat === activeFilter;
+    const queryMatch = !query || card.dataset.title.includes(query) || card.dataset.author.includes(query);
+    const show = catMatch && queryMatch;
+    card.classList.toggle('hidden', !show);
+    if (show) visible++;
+  });
+
+  countDisplay.textContent = `${visible} book${visible !== 1 ? 's' : ''}`;
+}
+
+// ── BOOK OF THE DAY ──
+function getDayOfYear(date) {
+  const start = new Date(date.getFullYear(), 0, 0);
+  const diff = date - start + (start.getTimezoneOffset() - date.getTimezoneOffset()) * 60 * 1000;
+  return Math.floor(diff / 86400000);
+}
+
+function formatDate(date) {
+  return date.toLocaleDateString('en-GB', { weekday:'long', year:'numeric', month:'long', day:'numeric' });
+}
+
+function renderBotd(date) {
+  const dayNum = ((getDayOfYear(date) - 1 + 365) % 365);
+  const book = BOOKS[dayNum % BOOKS.length];
+  const pct = Math.round(((dayNum + 1) / 365) * 100);
+
+  document.getElementById('botdDate').textContent = formatDate(date);
+  document.getElementById('botdNum').textContent = String(book.n).padStart(3, '0');
+  document.getElementById('botdTitle').textContent = book.title;
+  document.getElementById('botdAuthor').textContent = book.author;
+  document.getElementById('botdYear').textContent = book.year < 0 ? `${Math.abs(book.year)} BCE` : `${book.year} CE`;
+  document.getElementById('botdCat').textContent = book.cat;
+  document.getElementById('botdDayNum').textContent = dayNum + 1;
+  document.getElementById('botdFill').style.width = pct + '%';
+  document.getElementById('botdPct').textContent = pct + '% of the year complete';
+}
+
+let botdDate = new Date();
+renderBotd(botdDate);
+
+document.getElementById('botdPrev').addEventListener('click', () => {
+  botdDate = new Date(botdDate); botdDate.setDate(botdDate.getDate() - 1); renderBotd(botdDate);
+});
+document.getElementById('botdNext').addEventListener('click', () => {
+  botdDate = new Date(botdDate); botdDate.setDate(botdDate.getDate() + 1); renderBotd(botdDate);
+});
+document.getElementById('botdToday').addEventListener('click', () => {
+  botdDate = new Date(); renderBotd(botdDate);
+});
+
+// ── RANDOM PICKER ──
+let pickerHistory = [];
+
+function renderPickerCard(book) {
+  const card = document.getElementById('pickerCard');
+  card.classList.remove('visible');
+  setTimeout(() => {
+    document.getElementById('pcNum').textContent = `№ ${String(book.n).padStart(3,'0')}`;
+    document.getElementById('pcTitle').textContent = book.title;
+    document.getElementById('pcAuthor').textContent = book.author;
+    document.getElementById('pcYear').textContent = book.year < 0 ? `${Math.abs(book.year)} BCE` : `${book.year} CE`;
+    document.getElementById('pcCat').textContent = book.cat;
+    card.classList.add('visible');
+  }, 200);
+}
+
+function pickRandom() {
+  const btn = document.getElementById('spinBtn');
+  btn.classList.add('spinning');
+  setTimeout(() => btn.classList.remove('spinning'), 500);
+
+  const book = BOOKS[Math.floor(Math.random() * BOOKS.length)];
+  renderPickerCard(book);
+
+  // Add to history (max 8)
+  pickerHistory.unshift(book);
+  if (pickerHistory.length > 8) pickerHistory.pop();
+  renderHistory();
+}
+
+function renderHistory() {
+  const hist = document.getElementById('pickerHistory');
+  hist.innerHTML = pickerHistory.map((b, i) =>
+    `<span class="history-chip" data-i="${i}" title="${b.title} — ${b.author}">№${String(b.n).padStart(3,'0')} ${b.title.substring(0,22)}${b.title.length > 22 ? '…' : ''}</span>`
+  ).join('');
+  hist.querySelectorAll('.history-chip').forEach(chip => {
+    chip.addEventListener('click', () => renderPickerCard(pickerHistory[+chip.dataset.i]));
+  });
+}
+
+document.getElementById('spinBtn').addEventListener('click', pickRandom);
+
+// Initial count
+countDisplay.textContent = `${BOOKS.length} books`;
+
+// Seed picker with a book on load
+pickRandom();
+
+</script>
+</body>
+</html>
